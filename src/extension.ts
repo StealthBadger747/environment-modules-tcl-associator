@@ -44,11 +44,13 @@ function checkAllFiles() {
  * #! - shebang
  * #compdef - zsh
  * /// - POSIX path
+ * #% - Environment Module files
  */
 const acceptedPrefixes: Array<string> = [
     "#!",
     "#compdef",
     "//",
+    "#%",
 ]
 
 /**
