@@ -12,6 +12,7 @@
   "engines": {
     "vscode": "^1.29.0"
   },
+  "icon": "icons/modules_red_tcl_tk_small.png",
   "categories": [
     "Other"
   ],
