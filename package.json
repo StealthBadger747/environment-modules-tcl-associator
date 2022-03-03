@@ -3,7 +3,7 @@
   "displayName": "Environment Modules TCL Language Associator",
   "description": "A tiny extension to associate module files with TCL",
   "version": "1.0.0",
-  "publisher": "StealthBadger747",
+  "publisher": "ErikParawell",
   "license": "MIT",
   "repository": {
     "type": "git",
