@@ -1,13 +1,13 @@
 {
-  "name": "shebang-language-associator",
-  "displayName": "Shebang Language Associator",
-  "description": "A tiny extension to associate shebang lines with languages",
-  "version": "1.2.0",
-  "publisher": "davidhewitt",
+  "name": "environment-modules-tcl-associator",
+  "displayName": "Environment Modules TCL Language Associator",
+  "description": "A tiny extension to associate module files with TCL",
+  "version": "1.0.0",
+  "publisher": "StealthBadger747",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/davidhewitt/shebang-language-associator.git"
+    "url": "https://github.com/StealthBadger747/environment-modules-tcl-associator.git"
   },
   "engines": {
     "vscode": "^1.29.0"
@@ -19,38 +19,6 @@
     "*"
   ],
   "main": "./out/extension",
-  "contributes": {
-    "configuration": {
-      "type": "object",
-      "title": "Shebang Language Associator configuration",
-      "properties": {
-        "shebang.associations": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "title": "Shebang patterns to match ",
-            "properties": {
-              "pattern": {
-                "type": "string",
-                "description": "Pattern to match for the shebang content. The whole shebang is tested including the \"#!\"."
-              },
-              "language": {
-                "type": "string",
-                "description": "Language to apply to matching files."
-              }
-            }
-          },
-          "default": [
-            {
-              "pattern": "^#!/bin/bash$",
-              "language": "shellscript"
-            }
-          ],
-          "description": "Shebang patterns to associate languages to."
-        }
-      }
-    }
-  },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",

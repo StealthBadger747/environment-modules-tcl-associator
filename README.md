@@ -1,25 +1,15 @@
-# shebang-language-associator README
+# environtment-modules-tcl-associator README
 
-Have linux scripts without file extensions and atypical shebang lines which mean VSCode cannot detect your script's language correctly? Maybe Shebang Language Associator can help.
+Have Environment Module scripts? VSCode cannot detect that module files are actually TCL files in disguise. This plugin will help VSCode determine that these files are indeed TCL.
 
 ## Features
 
-Sets the VSCode lanaguage for a given file based on regex patterns for shebang lines. Just that.
+Sets the VSCode lanaguage to TCL for Environment Module scripts. Just that.
 
 
 ## Extension Settings
 
-This extension only has one setting, which is the patterns to associate to given languages. For example:
+This extension has no settings.
 
-```json
-"shebang.associations": [
-    {
-        "pattern": "^#!/bin/bash$",
-        "language": "shellscript"
-    }
-]
-```
-
-## Release Notes
-
-See [CHANGELOG.md]
+## This repo was based on
+[https://github.com/davidhewitt/shebang-language-associator](https://github.com/davidhewitt/shebang-language-associator)

@@ -40,43 +40,18 @@ function checkAllFiles() {
 }
 
 /**
- * Accepted prefixes are:
- * #! - shebang
- * #compdef - zsh
- * /// - POSIX path
- * #% - Environment Module files
- */
-const acceptedPrefixes: Array<string> = [
-    "#!",
-    "#compdef",
-    "//",
-    "#%",
-]
-
-/**
- * Check whether a file has a matching shebang, and apply the appropriate
- * language mode if so.
+ * Check whether a file has a matching shebang, and apply the TCL language.
  */
 function checkFile(doc: vscode.TextDocument) {
-    let shebang = doc.lineAt(0);
+    let moduleShebang = doc.lineAt(0);
 
     /*
      * Do nothing if the first line is not a shebang-like line.
      */
-    const match = acceptedPrefixes.some(prefix => shebang.text.startsWith(prefix));
+    const match = moduleShebang.text.startsWith("#%Module");
     if (!match) {
         return;
     }
 
-    let associations =
-        vscode.workspace.getConfiguration("shebang")
-            .get<Array<any>>("associations");
-
-    if (associations) {
-        for (const association of associations) {
-            if (shebang.text.match(new RegExp(association.pattern))) {
-                vscode.languages.setTextDocumentLanguage(doc, association.language);
-            }
-        }
-    }
+    vscode.languages.setTextDocumentLanguage(doc, "tcl");
 }
